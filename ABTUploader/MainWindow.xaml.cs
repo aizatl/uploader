@@ -570,7 +570,7 @@ namespace ABTUploader
             if (profileType == ProfileType.Discount) {
                 if (operationType == "Update" || operationType == "Insert") {
                     string tableName = "DiscountProfile";
-                    string tempTable = "DiscountProfile_temp";
+                    string tempTable = "DiscountProfile_temp";//test
                     string sql = $@"
                         IF OBJECT_ID('{tempTable}', 'U') IS NOT NULL
                             DROP TABLE {tempTable};
