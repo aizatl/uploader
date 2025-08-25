@@ -1,0 +1,60 @@
+﻿<Window x:Class="ABTUploader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ABT Recovery CSV Uploader" Height="400" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Wallet -->
+            <RowDefinition Height="Auto"/>
+            <!-- Card -->
+            <RowDefinition Height="Auto"/>
+            <!-- Discount -->
+            <RowDefinition Height="Auto"/>
+            <!-- Upload Button -->
+            <RowDefinition Height="*"/>
+            <!-- Optional log -->
+        </Grid.RowDefinitions>
+
+        <!-- WALLET_PROFILE.csv -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 5">
+            <Label Content="Wallet Profile CSV:" Width="150"/>
+            <ComboBox x:Name="walletOperationCombo" Width="80" SelectedIndex="0" Margin="0,0,5,0" Visibility="Collapsed">
+                <ComboBoxItem Content="Insert"/>
+                <ComboBoxItem Content="Update"/>
+                <ComboBoxItem Content="Delete"/>
+            </ComboBox>
+            <TextBox x:Name="walletFilePath" Width="216" IsReadOnly="True" Text="C:\Users\maiza\Desktop\abt\abt-mdb-onboard-file-20250620T030818Z-1-001\abt-mdb-onboard-file\WALLET_PROFILE.csv"/>
+            <Button Content="Browse" Width="75" Margin="5 0" Click="BrowseWalletFile"/>
+        </StackPanel>
+
+        <!-- CARD_PROFILE.csv -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0 5">
+            <Label Content="Card Profile CSV:" Width="150"/>
+            <ComboBox x:Name="cardOperationCombo" Width="80" SelectedIndex="0" Margin="0,0,5,0" Visibility="Collapsed">
+                <ComboBoxItem Content="Insert"/>
+                <ComboBoxItem Content="Update"/>
+                <ComboBoxItem Content="Delete"/>
+            </ComboBox>
+            <TextBox x:Name="cardFilePath" Width="214" IsReadOnly="True" Text="C:\Users\maiza\Desktop\abt\abt-mdb-onboard-file-20250620T030818Z-1-001\abt-mdb-onboard-file\CARD_PROFILE.csv"/>
+            <Button Content="Browse" Width="75" Margin="5 0" Click="BrowseCardFile"/>
+        </StackPanel>
+
+        <!-- DISCOUNT_PROFILE.csv -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 5">
+            <Label Content="Discount Profile CSV:" Width="150"/>
+            <ComboBox x:Name="discountOperationCombo" Width="80" SelectedIndex="0" Margin="0,0,5,0" Visibility="Collapsed">
+                <ComboBoxItem Content="Insert"/>
+                <ComboBoxItem Content="Update"/>
+                <ComboBoxItem Content="Delete"/>
+            </ComboBox>
+            <TextBox x:Name="discountFilePath" Width="215" IsReadOnly="True" Text="C:\Users\maiza\Desktop\abt\abt-mdb-onboard-file-20250620T030818Z-1-001\abt-mdb-onboard-file\DISCOUNT_PROFILE.csv"/>
+            <Button Content="Browse" Width="75" Margin="5 0" Click="BrowseDiscountFile"/>
+        </StackPanel>
+
+        <!-- Upload Button -->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0 15">
+            <Button Content="Upload" Width="200" Click="UploadFiles"/>
+        </StackPanel>
+    </Grid>
+</Window>
